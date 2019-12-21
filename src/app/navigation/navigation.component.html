@@ -1,0 +1,49 @@
+<mat-toolbar color="warn">
+  <mat-toolbar-row>
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" color="primary">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+      <span class="teams">Microsoft Teams</span>
+    <!-- Search form -->
+    <!-- <div class="row"> -->
+        <div class="col-md-1"></div>
+        <div class="col-md-1"><i class="far fa-edit icon-class" style="float:right"></i></div>
+      <div class="col-md-5">
+         <input type="search" id="search" value="" class="form-control" placeholder="Type a command">
+      </div>
+  <!-- </div> -->
+    <div class="col-md-5" style="flex: 0 0 25%;">
+      <i class="far fa-user-circle icon-class fa-1x float-md-right" style="float: right"></i>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #drawer mode="side" opened role="navigation">
+    <mat-nav-list>
+      <a mat-list-item routerLink='/first'><i class="fas fa-bell fa-1x icon-color"></i></a>
+      <a mat-list-item routerLink='/second'><i class="fas fa-comment-alt fa-1x icon-color"></i></a>
+      <a mat-list-item routerLink='/third'><i class="fas fa-users fa-1x icon-color"></i></a>
+      <a mat-list-item routerLink='/fourth'><i class="fas fa-calendar-alt fa-1x icon-color"></i></a>
+      <a mat-list-item routerLink='/fifth'><i class="fas fa-phone fa-1x icon-color"></i></a>
+      <a mat-list-item routerLink='/sixth' (click)="ToggleButton()"><i class="fas fa-ellipsis-h fa-1x icon-color"></i></a>
+    </mat-nav-list>
+    
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    
+  <div *ngIf="showSelected" style="z-index:-1">
+      fdhkjfhkd
+  </div>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<!--<mat-drawer-container class="example-container">
+  <mat-drawer #drawer mode="side" opened>
+    <a mat-list-item routerLink='/first'>First Component</a>
+    <a mat-list-item routerLink='/second'>Second Component</a>
+  </mat-drawer>
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>-->
